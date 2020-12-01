@@ -1,6 +1,7 @@
-import { Select, FormControl, MenuItem } from "@material-ui/core";
+import { Select, FormControl, MenuItem, Card, CardContent } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import InfoBox from './InfoBox';
+import Map from './Map';
 import './App.css';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
 
   return (
     <div className="app">
+      <div className="app__left">
       <div className="app__header">
       <h1>Covid-19 TRACKER</h1>
       <FormControl className="app__dropdown">
@@ -61,10 +63,18 @@ function App() {
           <InfoBox title="Deaths" cases={123} total={2000}/>
       </div>
 
-      {}
-      {}
+      <Map />
+    </div>
 
-      {}
+    <Card className="app__right">
+      <CardContent>
+        <h3>Live Cases by Country</h3>
+            {/* {Table} */}
+        <h3>Worldwide New Cases</h3>   
+            {/* {Graph} */}
+
+      </CardContent>
+    </Card>
     </div>
   );
 }
